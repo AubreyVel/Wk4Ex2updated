@@ -37,6 +37,8 @@ namespace Wk4Ex2
             Console.WriteLine("Final grade average is: " + CalculateFinalGrade(assignments, midterms, finalExam));
 
 
+            Console.ReadLine();
+
         }
 
         public static double AssignmentsGrade()
@@ -75,7 +77,7 @@ namespace Wk4Ex2
                     average = total / assignments.Count;
 
 
-                    Console.WriteLine("Calculating assignments grade done.");
+                    Console.WriteLine("Calculating assignments grade.");
                     return average;
                 }
             }
@@ -119,7 +121,7 @@ namespace Wk4Ex2
                     average = total / midterm.Count;
 
                     //returning average value
-                    Console.WriteLine("Calculating midterm grade done.");
+                    Console.WriteLine("Calculating midterm grade.");
                     return average;
                 }
             }
@@ -142,7 +144,7 @@ namespace Wk4Ex2
                 //if user inputs Y, add grades
                 if (addFinalExam == "Y")
                 {
-                    Console.WriteLine("Enter your grade for the midterm:");
+                    Console.WriteLine("Enter your grade for the final exam:");
                     grade = Convert.ToDouble(Console.ReadLine());
                     finalExam.Add(grade);
 
@@ -159,14 +161,16 @@ namespace Wk4Ex2
                     average = total / finalExam.Count;
 
                     //returning average value
-                    Console.WriteLine("Calculating midterm grade done.");
+                    Console.WriteLine("Calculating Final Exam grade.");
                     return average;
                 }
             }
         }
         public static double CalculateFinalGrade(double assignments, double midterms, double finals)
         {
+            //Calculating final grade
             double finalAveragedGrade = (assignments*.4) + (midterms * .3) + (finals*.3);
+            //returniong calculated grade
             return finalAveragedGrade;
         }
     }
