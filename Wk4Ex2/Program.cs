@@ -42,7 +42,8 @@ namespace Wk4Ex2
             List<double> assignments = new List<double>(); //using list top store grade values, will use .length to average grades later
             string addAssignment = ""; 
             double grade;
-
+            double total;
+            double average;
             while (true)
             {
                 Console.WriteLine("Add assignment grade? Y for yes, anything else for no.");
@@ -57,20 +58,23 @@ namespace Wk4Ex2
 
                 else
                 {
-                    Console.WriteLine("Good bye.");
+                    for (int i = 0; i < assignments.Count; i++)
+                    {
+                        total += assignments[i]; 
+                    }
+
+                    average = total / assignments.Count;
+
+
+                    Console.WriteLine("Calculating assignments grade done.");
+                    return average;
                 }
-
-
-
-
             }
-
-
-
-
-
-            return assignments;
         }
+
+
+
+
         public static double MidtermsGrade()
         {
 
